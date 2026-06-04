@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP — Clarice &amp; Giuseppe</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav__brand">Clarice &amp; Giuseppe</a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="travel.html">Travel</a></li>
+        <li><a href="rsvp.html" aria-current="page">RSVP</a></li>
+        <li><a href="registry.html">Gifts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">RSVP</h1>
+        <p class="section__subtitle">Please let us know if you can join us by <strong>31 December 2026</strong>.</p>
+
+        <!-- Already RSVP'd state -->
+        <div id="rsvp-already" class="form-card" hidden>
+          <div class="rsvp-state">
+            <svg class="rsvp-state__icon" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <h2 class="rsvp-state__title">You&rsquo;ve already RSVP&rsquo;d!</h2>
+            <p class="rsvp-state__text">We have your response on file. If you need to make a change, please contact us directly.</p>
+            <a href="mailto:couple@example.com" class="btn btn--outline" style="margin-top:1.75rem;display:inline-block;">Get in touch</a>
+          </div>
+        </div>
+
+        <!-- Success state -->
+        <div id="rsvp-success" class="form-card" hidden>
+          <div class="rsvp-state">
+            <svg class="rsvp-state__icon" width="52" height="52" fill="none" stroke="#3A6B35" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <h2 class="rsvp-state__title">Thank you!</h2>
+            <p class="rsvp-state__text">We&rsquo;ve received your RSVP. We can&rsquo;t wait to celebrate with you.</p>
+            <a href="index.html" class="btn btn--outline" style="margin-top:1.75rem;display:inline-block;">Back to home</a>
+          </div>
+        </div>
+
+        <!-- RSVP form -->
+        <form id="rsvp-form" class="form-card" novalidate>
+
+          <div id="form-status" class="form-status" hidden></div>
+
+          <div class="form-group">
+            <label for="full-name" class="form-label">Full name <span aria-hidden="true" style="color:var(--rose);">*</span></label>
+            <input type="text" id="full-name" name="name" class="form-input" required autocomplete="name" placeholder="Your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email address <span aria-hidden="true" style="color:var(--rose);">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" required autocomplete="email" placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <p class="form-label" id="attending-label">Will you be attending? <span aria-hidden="true" style="color:var(--rose);">*</span></p>
+            <div class="radio-group" role="radiogroup" aria-labelledby="attending-label">
+              <label class="radio-label">
+                <input type="radio" name="attending" value="yes" required>
+                Joyfully accept
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="attending" value="no">
+                Regretfully decline
+              </label>
+            </div>
+          </div>
+
+          <div id="attendance-fields">
+            <div class="form-group">
+              <label for="guests" class="form-label">Number of guests (including yourself)</label>
+              <div class="form-select-wrap">
+                <select id="guests" name="guests" class="form-select">
+                  <option value="1" selected>1 &mdash; Just me</option>
+                  <option value="2">2 &mdash; Me and my plus one</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <p class="form-label" id="dietary-label">Dietary requirements <span style="font-weight:400;text-transform:none;letter-spacing:0;">(tick any that apply)</span></p>
+              <div class="checkbox-group" role="group" aria-labelledby="dietary-label">
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Vegetarian"> Vegetarian</label>
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Vegan"> Vegan</label>
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Gluten-free"> Gluten-free</label>
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Dairy-free"> Dairy-free</label>
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Nut allergy"> Nut allergy</label>
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Shellfish allergy"> Shellfish allergy</label>
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Halal"> Halal</label>
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Kosher"> Kosher</label>
+                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Other" id="dietary-other"> Other</label>
+              </div>
+              <p id="dietary-other-hint" class="form-hint" hidden>
+                Please specify your requirement in the <strong>&ldquo;Message to the couple&rdquo;</strong> box below.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">
+              Message to the couple
+              <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span>
+            </label>
+            <textarea id="message" name="message" class="form-textarea" placeholder="Any kind words or questions are very welcome..."></textarea>
+          </div>
+
+          <button type="submit" id="rsvp-submit" class="btn btn--rose" style="width:100%;">Send RSVP</button>
+
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Clarice &amp; Giuseppe &mdash; 21 August 2027 &mdash; La Mandriola, Tuscany</p>
+  </footer>
+
+  <script type="module" src="js/rsvp.js?v=2"></script>
+
+</body>
+</html>

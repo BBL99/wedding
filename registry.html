@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gifts — Clarice &amp; Giuseppe</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav__brand">Clarice &amp; Giuseppe</a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="travel.html">Travel</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+        <li><a href="registry.html" aria-current="page">Gifts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <div class="registry-intro">
+          <h1 class="section__title">Gifts</h1>
+          <div id="registry-intro-desc">
+            <p style="color:var(--muted);line-height:1.85;margin-bottom:0.75rem;">
+              Your presence at our wedding is the greatest gift of all. If you would like to give something, we have put together a small wish list below.
+            </p>
+            <p style="color:var(--muted);line-height:1.85;font-size:0.9rem;">
+              Check the box next to any gifts you&rsquo;d like to give, then press <strong style="color:var(--text);">Submit Selections</strong> at the bottom of the page.
+              Greyed-out items have already been chosen by another guest. You may uncheck any of your selections before submitting — nothing is saved until you press Submit.
+            </p>
+          </div>
+        </div>
+
+        <!-- Loading state -->
+        <div id="registry-loading" class="loading-state">Loading registry&hellip;</div>
+
+        <!-- Error state -->
+        <div id="registry-error" class="error-state" hidden>
+          <p>Unable to load the registry right now. Please refresh the page and try again.</p>
+        </div>
+
+        <!-- Gift grid — populated by registry.js -->
+        <div id="gift-grid" class="gift-grid" aria-live="polite" hidden></div>
+
+        <!-- Thank you state -->
+        <div id="registry-thankyou" class="registry-thankyou" hidden>
+          <svg width="52" height="52" fill="none" stroke="#3A6B35" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" style="margin:0 auto;">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <h2 class="registry-thankyou__title">Thank you!</h2>
+          <p class="registry-thankyou__text">You&rsquo;ve claimed your gift &mdash; your selection has been saved. We&rsquo;re so grateful.</p>
+          <a href="index.html" class="btn btn--outline" style="margin-top:1.75rem;display:inline-block;">Back to home</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Conflict toast -->
+  <div id="conflict-toast" class="conflict-toast" hidden role="alert" aria-live="assertive"></div>
+
+  <!-- Sticky submit bar — shown once at least one gift is checked -->
+  <div id="submit-bar" class="registry-submit-bar" hidden>
+    <p class="registry-submit-bar__text">
+      <strong id="selection-count">0</strong>
+      gift<span id="selection-plural">s</span> selected
+    </p>
+    <button type="button" id="submit-btn" class="btn btn--rose">Submit Selections</button>
+  </div>
+
+  <!--
+    Gift card template — cloned by registry.js for each gift.
+    Not rendered directly.
+  -->
+  <template id="gift-template">
+    <div class="gift-card">
+      <label class="gift-card__label">
+        <div class="gift-card__image">
+          <img class="gift-card__img" alt="" loading="lazy">
+          <div class="gift-card__image-placeholder" aria-hidden="true">
+            <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+              <path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7m0 0a2 2 0 012-2h2a2 2 0 010 4H12m0-4a2 2 0 00-2-2H8a2 2 0 000 4h4"/>
+            </svg>
+          </div>
+          <div class="gift-card__claimed-badge" hidden>Claimed</div>
+        </div>
+        <div class="gift-card__body">
+          <h2 class="gift-card__name"></h2>
+          <p class="gift-card__desc"></p>
+          <p class="gift-card__price"></p>
+        </div>
+        <div class="gift-card__checkbox-wrap">
+          <input type="checkbox" class="gift-card__checkbox">
+          <span class="gift-card__checkbox-label"></span>
+        </div>
+      </label>
+    </div>
+  </template>
+
+  <script type="module" src="js/registry.js?v=6"></script>
+
+</body>
+</html>

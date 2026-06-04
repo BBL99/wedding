@@ -1,0 +1,84 @@
+{
+  "gifts": {
+    "gift-001": {
+      "name": "Kitchen Stand Mixer",
+      "description": "A classic stand mixer for baking and cooking together.",
+      "price": "€240–€290",
+      "image_url": "",
+      "claimed": false,
+      "order": 1
+    },
+    "gift-002": {
+      "name": "Le Creuset Cast Iron Casserole",
+      "description": "A 26 cm round casserole dish — a kitchen staple for years to come.",
+      "price": "€175–€230",
+      "image_url": "",
+      "claimed": false,
+      "order": 2
+    },
+    "gift-003": {
+      "name": "Linen Bedding Set",
+      "description": "King size duvet cover and pillowcase set in washed natural linen.",
+      "price": "€140–€185",
+      "image_url": "",
+      "claimed": false,
+      "order": 3
+    },
+    "gift-004": {
+      "name": "Champagne Flute Set",
+      "description": "A set of six crystal champagne flutes for celebrating together.",
+      "price": "€70–€95",
+      "image_url": "",
+      "claimed": false,
+      "order": 4
+    },
+    "gift-005": {
+      "name": "Coffee Machine",
+      "description": "A bean-to-cup espresso machine for proper morning coffee.",
+      "price": "€175–€230",
+      "image_url": "",
+      "claimed": false,
+      "order": 5
+    },
+    "gift-006": {
+      "name": "Dinner Set (6 place settings)",
+      "description": "A simple, timeless stoneware dinner service for everyday use and special occasions.",
+      "price": "€120–€165",
+      "image_url": "",
+      "claimed": false,
+      "order": 6
+    },
+    "gift-007": {
+      "name": "Spa Day Voucher",
+      "description": "A relaxing spa day for the two of us — the perfect post-wedding treat.",
+      "price": "€175–€230",
+      "image_url": "",
+      "claimed": false,
+      "order": 7
+    },
+    "gift-008": {
+      "name": "Cheese Board & Knife Set",
+      "description": "A beautiful marble and acacia wood cheese board with a matching set of knives.",
+      "price": "€45–€70",
+      "image_url": "",
+      "claimed": false,
+      "order": 8
+    },
+    "gift-009": {
+      "name": "Honeymoon Contribution",
+      "description": "A contribution towards our honeymoon — any amount is gratefully received.",
+      "price": "Any amount",
+      "image_url": "",
+      "claimed": false,
+      "order": 9
+    },
+    "gift-010": {
+      "name": "Personalised Photo Album",
+      "description": "A large leather-bound photo album to fill with our favourite memories.",
+      "price": "€60–€85",
+      "image_url": "",
+      "claimed": false,
+      "order": 10
+    }
+  }
+}

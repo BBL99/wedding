@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "gifts": {
+      ".read": true,
+      "$giftId": {
+        ".write": "data.exists() && data.child('claimed').val() === false && newData.child('claimed').val() === true"
+      }
+    },
+    "rsvps": {
+      ".read": true,
+      "$emailKey": {
+        ".write": "!data.exists()"
+      }
+    }
+  }
+}

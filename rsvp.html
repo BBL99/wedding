@@ -16,8 +16,10 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="travel.html">Travel</a></li>
+        <li><a href="accommodation.html">Accommodation</a></li>
         <li><a href="rsvp.html" aria-current="page">RSVP</a></li>
         <li><a href="registry.html">Gifts</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
   </header>
@@ -27,6 +29,15 @@
       <div class="container">
         <h1 class="section__title">RSVP</h1>
         <p class="section__subtitle">Please let us know if you can join us by <strong>31 December 2026</strong>.</p>
+        <p class="form-hint" style="margin-bottom: 1rem; max-width: 52ch;">
+          We understand that travelling to Italy won&rsquo;t be possible for everyone. If you already know
+          that you won&rsquo;t be able to join us, we&rsquo;d be very grateful if you could RSVP &ldquo;Decline&rdquo; as soon
+          as possible. It will really help us with our planning and guest numbers.
+        </p>
+        <p class="form-hint" style="margin-bottom: 1.5rem; max-width: 52ch;">
+          Due to venue capacity, we can only accommodate the guests named on your invitation.
+          If your invitation does not include a plus one, we are unfortunately unable to accommodate an additional guest. Thank you for understanding.
+        </p>
 
         <!-- Already RSVP'd state -->
         <div id="rsvp-already" class="form-card" hidden>
@@ -36,7 +47,7 @@
             </svg>
             <h2 class="rsvp-state__title">You&rsquo;ve already RSVP&rsquo;d!</h2>
             <p class="rsvp-state__text">We have your response on file. If you need to make a change, please contact us directly.</p>
-            <a href="mailto:couple@example.com" class="btn btn--outline" style="margin-top:1.75rem;display:inline-block;">Get in touch</a>
+            <a href="mailto:clarice.giuseppe2027@gmail.com" class="btn btn--outline" style="margin-top:1.75rem;display:inline-block;">Get in touch</a>
           </div>
         </div>
 
@@ -83,12 +94,16 @@
 
           <div id="attendance-fields">
             <div class="form-group">
-              <label for="guests" class="form-label">Number of guests (including yourself)</label>
-              <div class="form-select-wrap">
-                <select id="guests" name="guests" class="form-select">
-                  <option value="1" selected>1 &mdash; Just me</option>
-                  <option value="2">2 &mdash; Me and my plus one</option>
-                </select>
+              <p class="form-label" id="accommodation-label">Accommodation</p>
+              <div class="radio-group" role="radiogroup" aria-labelledby="accommodation-label">
+                <label class="radio-label">
+                  <input type="radio" name="accommodation" value="Room at La Mandriola">
+                  I would like a room at La Mandriola
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="accommodation" value="Staying elsewhere">
+                  I will be staying elsewhere
+                </label>
               </div>
             </div>
 
@@ -99,10 +114,6 @@
                 <label class="checkbox-label"><input type="checkbox" name="dietary" value="Vegan"> Vegan</label>
                 <label class="checkbox-label"><input type="checkbox" name="dietary" value="Gluten-free"> Gluten-free</label>
                 <label class="checkbox-label"><input type="checkbox" name="dietary" value="Dairy-free"> Dairy-free</label>
-                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Nut allergy"> Nut allergy</label>
-                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Shellfish allergy"> Shellfish allergy</label>
-                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Halal"> Halal</label>
-                <label class="checkbox-label"><input type="checkbox" name="dietary" value="Kosher"> Kosher</label>
                 <label class="checkbox-label"><input type="checkbox" name="dietary" value="Other" id="dietary-other"> Other</label>
               </div>
               <p id="dietary-other-hint" class="form-hint" hidden>
@@ -127,11 +138,10 @@
   </main>
 
   <footer class="site-footer">
-    <p>Clarice &amp; Giuseppe &mdash; 21 August 2027 &mdash; La Mandriola, Tuscany</p>
+    <p>Clarice &amp; Giuseppe, 21 August 2027, La Mandriola, Tuscany</p>
   </footer>
 
-  <script type="module" src="js/rsvp.js?v=2"></script>
-  <script src="js/confetti.js"></script>
+  <script type="module" src="js/rsvp.js?v=3"></script>
 
 </body>
 </html>

@@ -98,7 +98,7 @@ formEl.addEventListener('submit', async (e) => {
       name,
       email,
       attending,
-      guests:   (data.get('guests')   ?? '1').toString(),
+      accommodation: (data.get('accommodation') ?? 'Not specified').toString(),
       dietary:  data.getAll('dietary').join(', ') || 'None',
       message:  (data.get('message')  ?? '').toString().trim(),
     };

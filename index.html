@@ -6,7 +6,7 @@
   <title>Clarice &amp; Giuseppe — 21 August 2027</title>
   <meta name="description" content="Join us to celebrate the wedding of Clarice and Giuseppe, 21 August 2027.">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
 
@@ -69,8 +69,23 @@
           </p>
           <div class="quick-links">
             <a href="rsvp.html" class="btn btn--outline">RSVP</a>
-            <a href="schedule.html" class="btn btn--outline">View Schedule</a>
-            <a href="registry.html" class="btn btn--outline">Gifts</a>
+            <details class="quick-menu">
+              <summary class="btn btn--outline">
+                <svg width="15" height="12" viewBox="0 0 15 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <line x1="0" y1="1" x2="15" y2="1"/>
+                  <line x1="0" y1="6" x2="15" y2="6"/>
+                  <line x1="0" y1="11" x2="15" y2="11"/>
+                </svg>
+                Menu
+              </summary>
+              <div class="quick-menu__panel">
+                <a href="schedule.html">Schedule</a>
+                <a href="travel.html">Travel</a>
+                <a href="accommodation.html">Accommodation</a>
+                <a href="registry.html">Gifts</a>
+                <a href="faq.html">FAQ</a>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -111,6 +126,7 @@
     timer = setInterval(tick, 1000);
   </script>
 
+  <script src="js/nav.js"></script>
   <script src="js/confetti.js"></script>
 
 </body>
